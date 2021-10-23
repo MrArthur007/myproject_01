@@ -1,8 +1,5 @@
 <?php
 
-    require 'conf/database.php';
-    include 'conf/Fetch_inc.php';
-    $objfetch = new FetchAll;
 
 ?>
 <!DOCTYPE html>
