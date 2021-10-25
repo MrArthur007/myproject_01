@@ -80,7 +80,7 @@
             </div>
             <div class="col-3">
                 <ul class="list-group mt-4">
-                    <li class="list-group-item bg-dark text-white p-3">ประเถทผ้าทอ</li>
+                    <li class="list-group-item bg-dark text-white p-3">ประเภทผ้าทอ</li>
                         <a href="silk_show.php" class="list-group-item text-dark list-menu-custom active-list-menu-custom">ทั้งหมด</a>
                     <?php foreach ($result as $row) { ?>
                         <a href="?type_id=<?php echo $row['type_id']; ?>" class="list-group-item text-dark list-menu-custom"><?php echo $row['type_name']; ?></a>
