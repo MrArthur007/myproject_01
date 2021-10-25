@@ -28,7 +28,7 @@
 
         if($update_stmt->execute()) {
 
-            header("location: ../admin_edit.php?edit_id=$up_IDdb");
+            header("location: ../admin_edit.php?edit_id=$id");
             $_SESSION['update_success'] = "แก้ไขข้อมูลแอดมินสำเร็จ...";
 
         }
