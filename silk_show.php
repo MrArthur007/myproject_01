@@ -1,6 +1,23 @@
 <?php
 
+    require 'conf/database.php';
+    $objServer = new DB;
+    $sql = "SELECT * FROM silk_type";
 
+    $select_stmt = $objServer->connected()->prepare($sql);
+    $select_stmt->execute();
+    $result = $select_stmt->fetchAll();
+
+    $sql_card = "SELECT * FROM silk_data INNER JOIN silk_type ON silk_data.type_id = silk_type.type_id";
+    if(isset($_GET['type_id']) && !empty($_GET['type_id'])){
+        $sql_card .= " WHERE silk_data.type_id = '".$_GET['type_id']."'";
+    }
+    if(isset($_GET['search']) && !empty($_GET['search'])){
+        $sql_card .= " WHERE silk_data.title OR silk_data.silk_provice LIKE '%".$_GET['search']."%'";
+    }
+    $select_stmt_card = $objServer->connected()->prepare($sql_card);
+    $select_stmt_card->execute();
+    $result_data = $select_stmt_card->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,70 +28,63 @@
     <title>เว็บผ้าทอภาคเหนือ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
         body {
             background-image: url("src/img/index_bg.jpg");
             background-size: cover;
             background-color: #cccccc;
         }
+
+        .list-menu-custom:hover {
+            background-color: grey;
+            color: white;
+        }
+        .active-list-menu-custom {
+            background-color: lightgrey;
+        }
     </style>
 </head>
 <body>
 
     <?php include 'Layout/nav-bar-silkshow.php'; ?>
-    <div class="container border border-light border-1 rounded bg-light mt-3 mb-3">
-        <div class="row align-items-center h-100">
-            <div class="col mx-auto">
-                <img src="fixed_image/index_img_01.jpg" class="img-fluid rounded-3 m-auto" data-aos="zoom-in" data-aos-duration="1800" alt="">
+    <div class="container-fluid text-center bg-light">
+        <div class="row p-4">
+            <h3 class="">รายการผ้าทอภาคเหนือ</h3>
+            <div class="position-static top-0 end-0">
+                <div class="col-2">
+                    <form action=" " method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="ค้นหา" value="<?=(isset($_GET['search']) ? $_GET['search'] : ''); ?>">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                    </div>
+                    </form>
+                </div>
             </div>
-            <div class="col bg-dark text-light p-3 m-3 rounded-3">
-                <h1 class="fs-2" data-aos="fade-left" data-aos-duration="1600"><b>ผ้าทอภาคเหนือ</b></h1>
-                <p class="fs-6" data-aos="fade-left" data-aos-duration="1800">&nbsp;&nbsp;&nbsp;&nbsp;ผ้าทอในบริเวณภาคเหนือ หรือ 
-                ล้านนาในปัจจุบันคือบริเวณภาคเหนือ ได้แก่จังหวัดเชียงราย พะเยา ฃำพูน ฃำปาง 
-                แพร่ น่าน เชียงใหม่ และ แม่ฮ่องสอน จนถึงดินแดนบางส่วนของประเทศพม่า ประเทศจีน และ ลาว
-                </p>
-                <p class="fs-6" data-aos="fade-left" data-aos-duration="1800">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                จากประวัติศาสตร์และลักษณะภูมิประเทศดังกล่าว ทำให้ภาคเหนือเป็นดินแดนที่มีขนบประเพณีวัฒนธรรมเป็นของตัวเอง โดยเฉพาะกลุ่มไทยวนหรือโยนก 
-                ปัจจุบันเรียกตนเองว่า “ไทยวน” แต่เดิมมักเรียก “ลาวพุงดำ” เพราะนิยมสักลายตรงบริเวณต้นขาและหน้าทอง ไทยวนเป็นชนกลุ่มใหญ่ที่ตั้งถิ่นฐานอยู่บริเวณจังหวัดเชียงใหม่
-                ลำพูน และ ลำปาง ไทลื้อเป็นอีกกลุ่มหนึ่งที่มีจำนวนมากรองจากไทยวน ไทลื้อตั้งถิ่นฐานอยู่บริเวณจังหวัดเชียงราย พะเยา และ น่าน นอกจากนี้ยังมีชนกลุ่มน้อย เช่น ลัวะ กระเหรี่ยง 
-                ไทใหญ่ มอญ ตลอดไปจนภึงชายไทยภูเขาเผ่าต่างๆ เช่นแม้ว มูเซอ อีก้อ เย้า ลีซอ กระจายอยู่ในจังหวัดต่างๆ บริเวณภาคเหนือ
-                </p>
+            <div class="col-3">
+                <ul class="list-group mt-4">
+                    <li class="list-group-item bg-dark text-white p-3">ประเถทผ้าทอ</li>
+                        <a href="silk_show.php" class="list-group-item text-dark list-menu-custom active-list-menu-custom">ทั้งหมด</a>
+                    <?php foreach ($result as $row) { ?>
+                        <a href="?type_id=<?php echo $row['type_id']; ?>" class="list-group-item text-dark list-menu-custom"><?php echo $row['type_name']; ?></a>
+                    <?php } ?>
+                </ul>
             </div>
-            
-        </div>
-        <div class="row align-items-center h-100">
-            <div class="col bg-warning text-dark p-3 m-3 rounded-3">
-                <h1 class="fs-3" data-aos="fade-right" data-aos-duration="1600"><b>จุดสังเกตุผ้าซิ่นภาคเหนือ</b></h1>
-                <p class="fs-5" data-aos="fade-right" data-aos-duration="1800">
-                    – <b class="text-success">หัวซิ่น</b> ส่วนที่อยู่ติดกับเอว มักใช้ผ้าพื้นสีขาว สีแดง หรือสีดำต่อกับตัวซิ่นเพื่อให้ซิ่นยาวพอดีกับความสูงของผู้นุ่ง และช่วยให้ใช้ได้คงทน 
-                    เพราะเป็นชายพกต้องขมวดเหน็บเอวบ่อยๆ
-                </p>
-                <p class="fs-5" data-aos="fade-right" data-aos-duration="1800">
-                    – <b class="text-info">ตัวซิ่น</b> ส่วนกลางของซิ่น กว้างตามความกว้างของฟืม ทำให้ลายผ้าขวางลำตัว มักทอเป็นริ้วๆ มีสีต่างๆ กัน เช่น ริ้วเหลืองพื้นดำ 
-                    หรือทอยกเป็นตาสีเหลี่ยม หรือทอเป็นลายเล็กๆ
-                </p>
-                <p class="fs-5" data-aos="fade-right" data-aos-duration="1800">
-                    – <b class="text-light">ตีนซิ่น</b> ส่วนล่างสุด อาจเป็นสีแดง สีดำ หรือทอลายจกเรียก ซิ่นตีนจก ชาวไทยวนนิยมทอตีนจกแคบ เช่น ซิ่นตีนจกแม่แจ่ม บริเวณอำเภอแม่แจ่ม จังหวัดเชียงใหม่ 
-                    มักทอลายสี่เหลี่ยมข้าวหลามตัดอยู่ตรงกลาง เชิงล่างสุดเป็นสีแดง ซิ่นตีนจกของคหบดีหรือเจ้านายมักสอดดิ้นเงินหรือดิ้นทองให้สวยงามยิ่งขึ้น
-                </p>
-            </div>
-            <div class="col">
-                <img src="fixed_image/สังเกตุ.jpg" class="img-fluid rounded-3 m-auto" data-aos="zoom-in" data-aos-duration="1800" alt="">
+            <div class="d-flex col-8">
+                <?php foreach ($result_data as $row_data) { ?>
+                <div class="d-flex col-12 col-sm-4 p-4">
+                    <div class="card p-3">
+                        <img src="Admin/conf/silk_detail_img/<?php echo $row_data['images']; ?>" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"><?php echo $row_data['title']; ?></h5>
+                        <p class="card-text">ประเภทผ้าทอ : <?php echo $row_data['type_name']; ?></p>
+                        <a href="silk_detail.php?page_id=<?php echo $row_data['silk_id']; ?>" class="btn btn-primary">ดูรายละเอียด</a>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
         </div>
-    </div>
-
-
-    <div class="container-fluid mt-5 bg-light">
-        <div class="row">
-            <div class="col">
-                <h1></h1>
-            </div>
-        </div>
-    </div>
-
-
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

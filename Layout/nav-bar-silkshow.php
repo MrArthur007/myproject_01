@@ -14,10 +14,6 @@
             <a class="nav-link active" aria-current="page" href="silk_show.php">ผ้าทอภาคเหนือ</a>
             </li>
         </ul>
-        <form class="d-flex me-0 position-absolute top-50 end-0 translate-middle-y pe-4">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light" type="submit">Search</button>
-        </form>
         </div>
     </div>
     </nav>

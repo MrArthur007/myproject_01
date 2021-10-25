@@ -76,7 +76,7 @@
     <div class="container-fluid mt-5 bg-light">
         <div class="row text-center">
             <div class="col p-3">
-                <h1 class="fs-1">รายการผ้าทอภาคเหนือ</h1>
+                <h1 class="fs-1">รายการผ้าทอภาคเหนือเบื้องต้น</h1>
             </div>
             <div class="w-100"></div>
             <?php foreach ($result as $row) { ?>
@@ -86,7 +86,7 @@
                     <div class="card-body">
                     <h5 class="card-title"><?php echo $row['title']; ?></h5>
                     <p class="card-text">ประเภทผ้าทอ : <?php echo $row['type_name']; ?></p>
-                    <a href="#" class="btn btn-primary">ดูรายละเอียด</a>
+                    <a href="silk_detail.php?page_id=<?php echo $row['silk_id']; ?>" class="btn btn-primary">ดูรายละเอียด</a>
                     </div>
                 </div>
             </div>
@@ -94,8 +94,6 @@
         </div>
     </div>
 
-
-    </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
