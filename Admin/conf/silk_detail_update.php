@@ -5,7 +5,6 @@
 
     if (isset($_REQUEST['btn_update'])) {
             $id = $_POST['silk_id'];
-            $s_id = $_POST['s_id'];
             $type_id = $_POST['type_id'];
             $img_Oname = $_POST['img_oldName'];
             $title = $_POST['title'];
@@ -42,9 +41,8 @@
         if(!empty($image_file)) {
 
             try {
-                $sql = "UPDATE silk_data SET silk_id = :s_id, type_id = :type_id ,images = :img ,title = :title ,silk_provice = :s_prov ,silk_detail = :s_detail WHERE silk_id = :id";
+                $sql = "UPDATE silk_data SET type_id = :type_id ,images = :img ,title = :title ,silk_provice = :s_prov ,silk_detail = :s_detail WHERE silk_id = :id";
                 $update_stmt = $objServer->connected()->prepare($sql);
-                $update_stmt->bindParam(':s_id', $s_id);
                 $update_stmt->bindParam(':type_id', $type_id);
                 $update_stmt->bindParam(':img', $image_file);
                 $update_stmt->bindParam(':title', $title);
@@ -55,7 +53,7 @@
 
                 if ($update_stmt->execute()) {
 
-                    header("location: ../silk_detail_edit.php?edit_id=$s_id&&provice_name=$s_prov") . $_SESSION['insert_success'] = "การแก้ไขรายละเอียดผ้าทอเสร็จสมบูรณ์...";
+                    header("location: ../silk_detail_edit.php?edit_id=$id&&provice_name=$s_prov") . $_SESSION['insert_success'] = "การแก้ไขรายละเอียดผ้าทอเสร็จสมบูรณ์...";
                     
                 }
             

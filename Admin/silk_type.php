@@ -14,10 +14,9 @@
     }
 
     if(isset($_POST['btn_insert'])) {
-        $typeID = $_POST['Type_id'];
         $typeName = $_POST['silk_type'];
         if(!empty($typeName)) {
-            $objSilkType->InsertSilkType($typeID ,$typeName);
+            $objSilkType->InsertSilkType($typeName);
         } else {
             $_SESSION['insert_error'] = "กรุณากรอกข้อมูลให้ครบ...";
         }

@@ -81,10 +81,6 @@
                     <input type="hidden" name="silk_id" value="<?php echo $silk_id; ?>">
                     <input type="hidden" name="img_oldName" value="<?php echo $images; ?>">
                     <div class="mb-3">
-                        <label for="">ลำดับ</label>
-                        <input class="form-control" style="width: 80px;" type="number" name="s_id" value="<?php echo $silk_id; ?>">
-                    </div>
-                    <div class="mb-3">
                         <div class="mb-3 mt-3">
                             <img id="output" src="conf/silk_detail_img/<?php echo $images; ?>" class="rounded" width="250" height="250">
                         </div>
@@ -112,7 +108,7 @@
                         <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดผ้าทอ</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?php echo $silk_detail; ?>" placeholder="<?php echo $silk_detail; ?>" name="s_detail"><?php echo $silk_detail; ?></textarea>
                     </div>
-                    <input class="btn btn-warning rounded" type="submit" name="btn_update" value="แก้ไข">
+                    <input class="btn btn-warning rounded" type="submit" style="width:100px;" name="btn_update" value="แก้ไข">
                     <a class="btn btn-secondary" href="silk_detail.php" style="width:100px;">ยกเลิก</a>
                 </form>
 

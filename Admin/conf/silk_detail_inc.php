@@ -2,19 +2,18 @@
 
     class silkDetail extends DB {
 
-        public function insertSilkDetail($s_id , $type_id ,$file_name,$title ,$s_prov ,$s_detail) {
+        public function insertSilkDetail($type_id ,$file_name,$title ,$s_prov ,$s_detail) {
 
             try {
 
-                $sql = "INSERT INTO silK_data (silk_id ,type_id ,images ,title ,silk_provice ,silk_detail) VALUES (?,?,?,?,?,?)";
+                $sql = "INSERT INTO silK_data (type_id ,images ,title ,silk_provice ,silk_detail) VALUES (?,?,?,?,?)";
 
                 $insert_stmt = $this->connected()->prepare($sql);
-                $insert_stmt->bindParam(1, $s_id);
-                $insert_stmt->bindParam(2, $type_id);
-                $insert_stmt->bindParam(3, $file_name);
-                $insert_stmt->bindParam(4, $title);
-                $insert_stmt->bindParam(5, $s_prov);
-                $insert_stmt->bindParam(6, $s_detail);
+                $insert_stmt->bindParam(1, $type_id);
+                $insert_stmt->bindParam(2, $file_name);
+                $insert_stmt->bindParam(3, $title);
+                $insert_stmt->bindParam(4, $s_prov);
+                $insert_stmt->bindParam(5, $s_detail);
 
                 if($insert_stmt->execute()) {
 

@@ -10,12 +10,9 @@
     $objFetchAll = new FetchAll;
     $objSilkDetail = new silkDetail;
     if(isset($_SESSION['user_id'])) {
-
         $id = $_SESSION['user_id'];
         $objFetchAllUser = new FetchAll;
-
     }
-
 ?>
 
 <!DOCTYPE html>

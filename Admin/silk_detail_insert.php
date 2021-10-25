@@ -18,7 +18,6 @@
 
     if(isset($_POST['btn_insert'])) {
 
-        $s_id = $_POST['s_id'];
         $type_id = $_POST['type_id'];
         $title = $_POST['title'];
         $s_prov = $_POST['s_prov'];
@@ -52,7 +51,7 @@
 
             if(!empty($type_id AND $file_name AND $title AND $s_prov AND $s_detail)) {
 
-                $objSilkDetail->insertSilkDetail($s_id , $type_id ,$file_name ,$title ,$s_prov ,$s_detail);
+                $objSilkDetail->insertSilkDetail($type_id ,$file_name ,$title ,$s_prov ,$s_detail);
     
             } else {
     
@@ -116,10 +115,6 @@
             <div class="container-xl">
                 <form action="#" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="">ลำดับ</label>
-                        <input class="form-control" style="width: 80px;" type="number" name="s_id">
-                    </div>
-                    <div class="mb-3">
                         <div class="mb-3 mt-3">
                             <img id="output" class="rounded" width="250" height="250">
                         </div>
@@ -146,7 +141,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="s_detail"></textarea>
                     </div>
                     <input class="btn btn-success rounded" type="submit" name="btn_insert" value="Insert">
-                    <button class="btn btn-secondary">ยกเลิก</button>
+                    <a href="silk_detail.php" class="btn btn-secondary">ยกเลิก</a>
                 </form>
 
             </div>

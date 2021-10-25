@@ -10,10 +10,6 @@
             <div class="modal-body">
                 <form action="#" method="post">
                     <div class="mb-3">
-                        <label for="">ลำดับ</label>
-                        <input class="form-control w-25" type="number" name="Type_id">
-                    </div>
-                    <div class="mb-3">
                         <label for="">ชื่อประเภทผ้าทอ</label>
                         <input class="form-control" type="text" name="silk_type" placeholder="ชื่อประเภทผ้าทอ" />
                     </div>

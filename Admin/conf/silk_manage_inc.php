@@ -2,7 +2,7 @@
 
     class ManageSilkType extends DB {
 
-        public function InsertSilkType($typeID ,$typeName) {
+        public function InsertSilkType($typeName) {
 
             $sql = "SELECT * FROM silk_type WHERE type_name = '$typeName'";
             $check_stmt = $this->connected()->prepare($sql);
@@ -14,10 +14,9 @@
 
             if ($typeName != isset($db_typeName)) {
 
-                $sql_insert  = "INSERT INTO silk_type (type_id ,type_name) VALUES (?,?)";
+                $sql_insert  = "INSERT INTO silk_type (type_name) VALUES (?)";
                 $insert_stmt = $this->connected()->prepare($sql_insert);
-                $insert_stmt->bindParam(1, $typeID);
-                $insert_stmt->bindParam(2, $typeName);
+                $insert_stmt->bindParam(1, $typeName);
 
                 if($insert_stmt->execute()) {
                     return $_SESSION['insert_success'] = "การเพิ่มข้อมูลประเภทผ้าทอเสร็จสมบูรณ์...";

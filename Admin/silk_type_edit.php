@@ -74,10 +74,6 @@
         <form action="conf/silk_type_update.php" method="post">
             <input type="hidden" name="edit_id" value="<?php echo $type_id; ?>">
             <div class="mb-3">
-                <label for="">ID</label>
-                <input class="form-control" style="width: 80px;" type="number" name="U_typeId" value="<?php echo $type_id; ?>">
-            </div>
-            <div class="mb-3">
                 <label for="" class="form-label">ประเภทผ้าทอ</label>
                 <input type="text" name="typeName" value="<?php echo $type_name; ?>" class="form-control">
             </div>

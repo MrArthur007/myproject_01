@@ -21,9 +21,7 @@
         }
         
     } else {
-
         echo "Access Denide";
-
     }
 
 
