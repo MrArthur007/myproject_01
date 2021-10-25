@@ -52,11 +52,11 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>จัดการข้อมูลแอดมินในระบบ</h2>
+                                    <h2>ข้อมูลแอดมินในระบบเบื้องต้น</h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="admin_manage.php" class="btn btn-primary p-2 ps-3 pe-3 rounded" data-toggle="modal"><i class="fas fa-users-cog"></i><span><b>จัดการข้อมูลแอดมินในระบบ</b></span></a>						
-                                </div>
+                                    <a href="admin_manage.php" class="btn btn-primary p-2 ps-3 pe-3 rounded" data-toggle="modal"><i class="fas fa-users-cog"></i><span><b>จัดการข้อมูลแอดมินในระบบ</b></span></a>
+                                </div>				
                             </div>
                         </div>
                         <table class="table table-striped table-hover">

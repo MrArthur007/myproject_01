@@ -46,8 +46,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
         html, body {
             height: 100%;
+            font-family: 'Kanit', sans-serif;
         }
         .container-fluid {
             height: 100%;

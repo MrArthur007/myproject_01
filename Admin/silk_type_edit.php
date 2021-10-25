@@ -10,6 +10,7 @@
 
         $id = $_SESSION['user_id'];
         $objFetchAllUser = new FetchAll;
+
     }
 
     $objFname = new FetchAll;
@@ -17,18 +18,14 @@
     
     if(!empty($_REQUEST['edit_id'])) {
 
-        $id = $_REQUEST['edit_id'];
+        $t_id = $_REQUEST['edit_id'];
 
-        $sql = "SELECT * FROM silk_type WHERE type_id = '$id'";
+        $sql = "SELECT * FROM silk_type WHERE type_id = '$t_id'";
         $select_edit_stmt = $objServer->connected()->prepare($sql);
         $select_edit_stmt->execute();
 
         while ($row = $select_edit_stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
-
-        
-        
-
 
 ?>
 
@@ -55,7 +52,7 @@
     <!-- sidebar-wrapper  -->
     <main class="page-content">
         <div class="container">
-        <h2>แก้ไขข้อมูลแอดมินภายในระบบ</h2>
+        <h2>แก้ไขข้อมูลประเภทผ้าทอ</h2>
         <p class="fs-3 text-start text-danger m-0 p-0">
             <?php 
                 if(isset($_SESSION['update_error'])) {
@@ -75,18 +72,17 @@
             ?>
         </p>
         <form action="conf/silk_type_update.php" method="post">
-
             <input type="hidden" name="edit_id" value="<?php echo $type_id; ?>">
             <div class="mb-3">
                 <label for="">ID</label>
                 <input class="form-control" style="width: 80px;" type="number" name="U_typeId" value="<?php echo $type_id; ?>">
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">Username</label>
+                <label for="" class="form-label">ประเภทผ้าทอ</label>
                 <input type="text" name="typeName" value="<?php echo $type_name; ?>" class="form-control">
             </div>
-            <button type="submit" name="btn_update" class="btn btn-warning">Update</button>
-            <input class="btn btn-secondary" onclick="history.back()" value="Cancel">
+            <button type="submit" name="btn_update" class="btn btn-warning" style="width:100px;">แก้ไข</button>
+            <a class="btn btn-secondary" href="silk_type.php" style="width:100px;">ยกเลิก</a>
         </form>
         </div>
     </main>

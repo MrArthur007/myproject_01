@@ -24,8 +24,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
         html, body {
             height: 100%;
+            font-family: 'Kanit', sans-serif;
         }
         .container-fluid {
             height: 100%;
@@ -36,6 +38,7 @@
             background-size: cover;
             background-color: #cccccc;
             height: 100%;
+            font-family: 'Kanit', sans-serif;
         }
 
         .list-menu-custom:hover {

@@ -75,9 +75,7 @@
             $result = $select_stmt->fetchAll();
             foreach ($result as $row) {
                 $value_prov= $row['name_th'];
-
                 echo "<option value='$value_prov'>$value_prov</option>";
-
             }
             
         }

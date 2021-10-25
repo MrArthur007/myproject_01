@@ -113,7 +113,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?php echo $silk_detail; ?>" placeholder="<?php echo $silk_detail; ?>" name="s_detail"><?php echo $silk_detail; ?></textarea>
                     </div>
                     <input class="btn btn-warning rounded" type="submit" name="btn_update" value="แก้ไข">
-                    <button class="btn btn-secondary">ยกเลิก</button>
+                    <a class="btn btn-secondary" href="silk_detail.php" style="width:100px;">ยกเลิก</a>
                 </form>
 
             </div>

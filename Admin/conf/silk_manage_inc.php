@@ -57,7 +57,6 @@
                                 "</a>".  
                                 "</td>".
                                 "</tr>";
-
                     echo $table;
 
                 }
@@ -70,7 +69,6 @@
         public function FetchAllSilkTypeForInsert() {
 
             try {
-                
                 $sql = "SELECT * FROM silk_type";
                 $select_stmt = $this->connected()->prepare($sql);
                 $select_stmt->execute();
