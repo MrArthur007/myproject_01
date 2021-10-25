@@ -1,36 +1,19 @@
 <html>
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand fs-5" href="#">เว็บผ้าทอภาคเหนือ</a>
+        <a class="navbar-brand me-0 position-absolute fs-2 p-2" href="#"><b class="p-0 m-0">เว็บผ้าทอภาคเหนือ</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto fs-5">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
+            <a class="nav-link active" aria-current="page" href="index.php">หน้าหลัก</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ประวัติความเป็นมา</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ผ้าทอภาคเหนือทั้งหมด</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ผ้าทอตามจังหวัดภาคเหนือ
-            </a>
-            <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdown">
-                <?php $objfetch->FetchProvice(); ?>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item link-dark" href="login_admin.php">Admin</a></li>
-            </ul>
+            <a class="nav-link active" aria-current="page" href="silk_show.php">ผ้าทอภาคเหนือ</a>
             </li>
         </ul>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
         </div>
     </div>
     </nav>

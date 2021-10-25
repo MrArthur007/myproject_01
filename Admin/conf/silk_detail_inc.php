@@ -52,7 +52,7 @@
                             "<td>" . "<img src='conf/silk_detail_img/$images' class='img-thumbnail'>" . "</td>" .
                             "<td>" . $Title . "</td>" .
                             "<td>" . $s_prov . "</td>" .
-                            "<td>" . $s_detail . "</td>" .
+                            "<td style='white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;'>" . $s_detail . "</td>" .
                             "<td>". 
                             "<a href='silk_detail_edit.php?edit_id=$s_id&&provice_name=$s_prov'>" . 
                             "<i class='fas fa-pen' data-toggle='tooltip' title='Edit'></i>". 

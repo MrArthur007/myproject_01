@@ -85,7 +85,7 @@
                                     <th style="width: 120px;">ชื่อผ้าทอ</th>
                                     <th style="width: 120px;">จังหวัด</th>
                                     <th style="width: 200px;">รายละเอียด</th>
-                                    <th style="width: 180px;">แก้ไข/จัดการรูปภาพ/ลบ</th>
+                                    <th class="text-truncate" style="width: 180px;">แก้ไข/จัดการรูปภาพ/ลบ</th>
                                 </tr>
                             </thead>
                             <tbody>
