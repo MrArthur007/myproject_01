@@ -21,7 +21,7 @@
                             $_SESSION['user_id'] = $db_userID;
                             $_SESSION['login'] = $username;
                             $_SESSION['login_success'] =  "<script>alert('เข้าสู่ระบบ...');</script>" .
-                            sleep(3) . header("location: Admin/index_admin.php");
+                            sleep(1) . header("location: Admin/index_admin.php");
 
                         } else {
 

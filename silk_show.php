@@ -60,6 +60,13 @@
         .active-list-menu-custom {
             background-color: lightgrey;
         }
+        .nav-link:hover {
+            background-color: #fff;
+            color: black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>

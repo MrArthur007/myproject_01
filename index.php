@@ -31,6 +31,24 @@
             height: 100%;
             overflow-y: hidden; /* don't show content that exceeds my height */
         }
+
+        .nav-link:hover {
+            background-color: #fff;
+            color: black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+        .show-prod {
+            background-color: #C0C0C0;
+            color: white;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+        .text-02 {
+            background-color: #A9A9A9;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +76,7 @@
             
         </div>
         <div class="row align-items-center h-100">
-            <div class="col bg-warning text-dark p-3 m-3 rounded-3">
+            <div class="col text-02 text-dark p-3 m-3 rounded-3">
                 <h1 class="fs-3" data-aos="fade-right" data-aos-duration="1600"><b>จุดสังเกตุผ้าซิ่นภาคเหนือ</b></h1>
                 <p class="fs-5" data-aos="fade-right" data-aos-duration="1800">
                     – <b class="text-success">หัวซิ่น</b> ส่วนที่อยู่ติดกับเอว มักใช้ผ้าพื้นสีขาว สีแดง หรือสีดำต่อกับตัวซิ่นเพื่อให้ซิ่นยาวพอดีกับความสูงของผู้นุ่ง และช่วยให้ใช้ได้คงทน 
@@ -81,10 +99,8 @@
 
 
     <div class="container-fluid mt-5 bg-light">
-        <div class="row text-center">
-            <div class="col p-3">
-                <h1 class="fs-1">รายการผ้าทอภาคเหนือเบื้องต้น</h1>
-            </div>
+            <h1 class="fs-1 p-3 show-prod mt-3 mb-3 w-25 m-auto text-center">ผ้าทอภาคเหนือแนะนำ</h1>
+        <div class="row border border-1 p-3 mx-3 mt-3 mb-3 text-center">
             <div class="w-100"></div>
             <?php foreach ($result as $row) { ?>
             <div class="col-12 col-sm-4 p-4">

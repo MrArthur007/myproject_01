@@ -14,7 +14,6 @@
 
     if(isset($_POST['btn_insert'])) {
 
-        $adminId = $_POST['IDdb'];
         $uname = $_POST['uname'];
         $passwd = $_POST['passwd'];
         $fname = $_POST['fname'];
@@ -24,7 +23,7 @@
         if(!empty($uname && $passwd && $fname && $email && $tel)) {
 
             $objCheckInsert = new ManageAdmin;
-            $objCheckInsert->CheckInsert($adminId ,$uname ,$passwd ,$fname ,$email ,$tel);
+            $objCheckInsert->CheckInsert($uname ,$passwd ,$fname ,$email ,$tel);
 
 
         } else {

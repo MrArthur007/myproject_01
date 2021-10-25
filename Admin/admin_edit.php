@@ -26,10 +26,6 @@
         while ($row = $select_edit_stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
 
-        
-        
-
-
 ?>
 
 <!DOCTYPE html>
@@ -77,10 +73,6 @@
         <form action="conf/admin_update.php" method="post">
 
             <input type="hidden" name="edit_id" value="<?php echo $id; ?>">
-            <div class="mb-3">
-                <label for="">ID</label>
-                <input class="form-control" style="width: 80px;" type="number" name="U_IDdb" value="<?php echo $id; ?>">
-            </div>
             <div class="mb-3">
                 <label for="" class="form-label">ไอดี</label>
                 <input type="text" name="edit_uname" value="<?php echo $username; ?>" class="form-control">

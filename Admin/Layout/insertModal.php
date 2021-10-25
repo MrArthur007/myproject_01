@@ -10,10 +10,6 @@
             <div class="modal-body">
                 <form action="#" method="post">
                     <div class="mb-3">
-                        <label for="">ID</label>
-                        <input class="form-control w-25" type="number" name="IDdb">
-                    </div>
-                    <div class="mb-3">
                         <label for="">ไอดี</label>
                         <input class="form-control" type="text" name="uname" placeholder="ไอดีผู้ใช้งาน" />
                     </div>

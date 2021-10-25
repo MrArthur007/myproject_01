@@ -46,15 +46,22 @@
         .active-list-menu-custom {
             background-color: lightgrey;
         }
+        .nav-link:hover {
+            background-color: #fff;
+            color: black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
-    <?php include 'Layout/nav-bar-silkshow.php'; ?>
+    <?php include 'Layout/nav-bar.php'; ?>
     <div class="container-fluid bg-light h-100 p-4">
         <div class="row p-4 text-center">
             <h3 class="mt-3 mb-4"><b>รายละเอียด : </b><?php echo $row['title']; ?></h3>
-            <div class="col-5 me-5 p-4 border border-2 rounded-3">
+            <div class="col-5 me-5 p-4 border border-2 rounded-3 mt-3">
                 <img src="Admin/conf/silk_detail_img/<?php echo $row['images']; ?>" id="preview" class="img-fluid rounded-2" width="100%" height="100%" alt="">
                 <?php 
                     $sql_gallery = "SELECT * FROM silk_gallery WHERE silk_id = '$s_id'"; 
