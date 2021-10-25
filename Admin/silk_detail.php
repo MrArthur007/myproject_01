@@ -16,25 +16,6 @@
 
     }
 
-    if(isset($_POST['btn_insert'])) {
-
-        $s_id = $_POST['s_id'];
-        $type_name = $_POST['type_name'];
-        $title = $_POST['title'];
-        $s_prov = $_POST['s_prov'];
-        $s_detail = $_POST['s_detail'];
-
-        if(!empty($type_name AND $title AND $s_prov AND $s_detail)) {
-
-            $objSilkDetail->insertSilkDetail($s_id , $type_name ,$title ,$s_prov ,$s_detail);
-
-        } else {
-
-            $_SESSION['insert_error'] =  "กรุณากรอกข้อมูลให้ครบถ้วน...";
-
-        }
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +72,7 @@
                                     <h2>ตารางข้อมูลรายละเอียดผ้าทอ</h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#insertSilkType" role="button" data-bs-toggle="modal" class="btn btn-success p-2 ps-3 pe-3 rounded"><i class="fas fa-plus-square"></i><span><b>เพิ่มรายละเอียดผ้าทอ</b></span></a>						
+                                    <a href="silk_detail_insert.php" class="btn btn-success p-2 ps-3 pe-3 rounded"><i class="fas fa-plus-square"></i><span><b>เพิ่มรายละเอียดผ้าทอ</b></span></a>						
                                 </div>
                             </div>
                         </div>
@@ -100,16 +81,15 @@
                                 <tr class="text-center">
                                     <th style="width: 80px;">ลำดับ</th>
                                     <th style="width: 120px;">ประเภทผ้าทอ</th>
-                                    <th style="width: 120px;">หัวข้อ</th>
+                                    <th style="width: 120px;">รูปภาพ</th>
+                                    <th style="width: 120px;">ชื่อผ้าทอ</th>
                                     <th style="width: 120px;">จังหวัด</th>
                                     <th style="width: 200px;">รายละเอียด</th>
-                                    <th style="width: 120px;">แก้ไข/ลบ</th>
+                                    <th style="width: 180px;">แก้ไข/จัดการรูปภาพ/ลบ</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
                                 <?php $objSilkDetail->FetchAllDetail(); ?>
-                               
                             </tbody>
                         </table>
                     </div>
@@ -119,8 +99,6 @@
 
         </div>
 
-        <!-- Insert Admin Modal -->
-        <?php include 'Layout/insertSilkDetail.php'; ?>
     </main>
     <!-- page-content" -->
     </div>

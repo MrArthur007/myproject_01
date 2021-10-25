@@ -70,6 +70,7 @@
         public function FetchAllSilkTypeForInsert() {
 
             try {
+                
                 $sql = "SELECT * FROM silk_type";
                 $select_stmt = $this->connected()->prepare($sql);
                 $select_stmt->execute();
@@ -77,10 +78,8 @@
                 $result = $select_stmt->fetchAll();
                 foreach ($result as $row) {
                     $silk_name = $row['type_name'];
-                    
-                    echo "<option value='$silk_name'>$silk_name</option>";
-
-
+                    $type_id = $row['type_id'];                    
+                    echo "<option value='$type_id'>$silk_name</option>";
                 }
 
             } catch (PDOException $error) {
