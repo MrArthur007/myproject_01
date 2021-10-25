@@ -89,7 +89,7 @@
             </div>
             <div class="d-flex col-8">
                 <?php foreach ($result_data as $row_data) { ?>
-                <div class="d-flex col-12 col-sm-4 p-4">
+                <div class="col-12 col-sm-4 p-4">
                     <div class="card p-3">
                         <img src="Admin/conf/silk_detail_img/<?php echo $row_data['images']; ?>" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
@@ -101,7 +101,9 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="col-6 m-auto">
+        </div>
+        <div class="row">
+            <div class="col-8 m-auto">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item <?=$page > 1 ? '' : 'disabled'?>">
