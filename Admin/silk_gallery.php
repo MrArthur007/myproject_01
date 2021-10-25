@@ -116,7 +116,7 @@
     <!-- sidebar-wrapper  -->
     <main class="page-content">
         <div class="container">
-        <h2>การจัดการแกลลอรี่ : <?php echo $type_name; ?></h2>
+        <h2>การจัดการแกลลอรี่ : <?php echo $title; ?></h2>
         <p class="fs-3 text-start text-danger m-0 p-0">
             <?php 
                 if(isset($_SESSION['insert_error'])) {
