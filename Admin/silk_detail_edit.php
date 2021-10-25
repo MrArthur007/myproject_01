@@ -112,7 +112,7 @@
                         <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดผ้าทอ</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?php echo $silk_detail; ?>" placeholder="<?php echo $silk_detail; ?>" name="s_detail"><?php echo $silk_detail; ?></textarea>
                     </div>
-                    <input class="btn btn-success rounded" type="submit" name="btn_update" value="แก้ไข">
+                    <input class="btn btn-warning rounded" type="submit" name="btn_update" value="แก้ไข">
                     <button class="btn btn-secondary">ยกเลิก</button>
                 </form>
 

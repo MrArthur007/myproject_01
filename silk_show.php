@@ -8,13 +8,29 @@
     $select_stmt->execute();
     $result = $select_stmt->fetchAll();
 
+    if(isset($_GET['page'])){
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
+    }
+    $record_show = 3;
+    $offset = ($page - 1) * $record_show;
+    $sql_total = "SELECT count(*) FROM silk_data";
+    $select_stmt_total = $objServer->connected()->query($sql_total);
+    $select_stmt_total->execute();
+    $total_row = $select_stmt_total->fetchColumn();
+
+    $page_total = ceil($total_row/$record_show);
+
     $sql_card = "SELECT * FROM silk_data INNER JOIN silk_type ON silk_data.type_id = silk_type.type_id";
     if(isset($_GET['type_id']) && !empty($_GET['type_id'])){
         $sql_card .= " WHERE silk_data.type_id = '".$_GET['type_id']."'";
     }
     if(isset($_GET['search']) && !empty($_GET['search'])){
-        $sql_card .= " WHERE silk_data.title OR silk_data.silk_provice LIKE '%".$_GET['search']."%'";
+        $sql_card .= " WHERE silk_data.silk_provice LIKE '%".$_GET['search']."%' OR silk_data.title LIKE '%".$_GET['search']."%'";
     }
+    $sql_card .= " LIMIT $offset,$record_show";
+
     $select_stmt_card = $objServer->connected()->prepare($sql_card);
     $select_stmt_card->execute();
     $result_data = $select_stmt_card->fetchAll();
@@ -30,12 +46,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
-        body {
-            background-image: url("src/img/index_bg.jpg");
-            background-size: cover;
-            background-color: #cccccc;
+        html, body {
+            height: 100%;
         }
-
+        .container-fluid {
+            height: 100%;
+            overflow-y: hidden; /* don't show content that exceeds my height */
+        }
         .list-menu-custom:hover {
             background-color: grey;
             color: white;
@@ -47,10 +64,10 @@
 </head>
 <body>
 
-    <?php include 'Layout/nav-bar-silkshow.php'; ?>
+    <?php include 'Layout/nav-bar.php'; ?>
     <div class="container-fluid text-center bg-light">
         <div class="row p-4">
-            <h3 class="">รายการผ้าทอภาคเหนือ</h3>
+            <h3 class="fs-1 border border-2 w-50 m-auto p-2 mt-3 mb-3">รายการผ้าทอภาคเหนือ</h3>
             <div class="position-static top-0 end-0">
                 <div class="col-2">
                     <form action=" " method="get">
@@ -84,8 +101,42 @@
                 </div>
                 <?php } ?>
             </div>
+            <div class="col-6 m-auto">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item <?=$page > 1 ? '' : 'disabled'?>">
+                    <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">หน้าแรก</a>
+                    </li>
+                    <li class="page-item <?=$page > 1 ? '' : 'disabled'?>">
+                        <a class="page-link" href="?page=<?=$page-1;?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <?php for($i=1; $i <= $page_total; $i++): ?>
+                        <?php if($page <= 2):?>
+                            
+                        <?php endif; ?>
+                        <li class="page-item <?=$page == $i ? 'active' : '' ?>"><a class="page-link" href="?page=<?=$i?>"><?php echo $i; ?></a></li>
+                    <?php endfor; ?>
+                    <li class="page-item <?=$page < $page_total ? '' : 'disabled'?>">
+                        <a class="page-link" href="?page=<?=$page+1;?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                    <a class="page-link" href="?page=<?=$page_total;?>">หน้าหลังสุด</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
         </div>
     </div>
+    <footer class="text-center">
+        <p>
+            @LandWare Coporation : 
+            <a href="login_admin.php">ไปยังหน้าแอดมิน</a>
+        </p>
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

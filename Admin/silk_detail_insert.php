@@ -132,8 +132,8 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="">ชื่อผ้าทอ</label>
-                        <input class="form-control" type="text" name="title" placeholder="ชื่อหัวข้อ" />
+                        <label for="">ลายผ้าทอ</label>
+                        <input class="form-control" type="text" name="title" placeholder="ชื่อลายผ้า" />
                     </div>
                     <div class="mb-3">
                         <label for="">จังหวัด</label>
@@ -146,7 +146,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="s_detail"></textarea>
                     </div>
                     <input class="btn btn-success rounded" type="submit" name="btn_insert" value="Insert">
-                    <button class="btn btn-secondary">Cancle</button>
+                    <button class="btn btn-secondary">ยกเลิก</button>
                 </form>
 
             </div>

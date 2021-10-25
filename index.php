@@ -24,6 +24,13 @@
             background-size: cover;
             background-color: #cccccc;
         }
+        html, body {
+            height: 100%;
+        }
+        .container-fluid {
+            height: 100%;
+            overflow-y: hidden; /* don't show content that exceeds my height */
+        }
     </style>
 </head>
 <body>
@@ -93,7 +100,12 @@
             <?php } ?>
         </div>
     </div>
-
+    <footer class="text-center bg-light border border-top">
+        <p>
+            @LandWare Coporation : 
+            <a href="login_admin.php">ไปยังหน้าแอดมิน</a>
+        </p>
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

@@ -14,26 +14,26 @@
                         <input class="form-control w-25" type="number" name="IDdb">
                     </div>
                     <div class="mb-3">
-                        <label for="">Username</label>
+                        <label for="">ไอดี</label>
                         <input class="form-control" type="text" name="uname" placeholder="ไอดีผู้ใช้งาน" />
                     </div>
                     <div class="">
-                        <label for="">password</label>
+                        <label for="">รหัสผ่าน</label>
                         <input class="form-control" id="myInput" type="password" name="passwd" placeholder="รหัสผ่าน" maxlength="6"/>
                         <div class="p-2">
-                            <input type="checkbox" onclick="myFunction()"> <span class="fs-6 p-0">Show Password</span>
+                            <input type="checkbox" onclick="myFunction()"> <span class="fs-6 p-0">ดูรหัสผ่าน</span>
                         </div>
                     </div>
                     <div class="mb-2">
-                        <label for="">fullname</label>
+                        <label for="">ชื่อ - นามสกุล</label>
                         <input class="form-control" type="text" name="fname" placeholder="ชื่อ - นามสกุล" />
                     </div>
                     <div class="mb-3">
-                        <label for="">Email Address</label>
+                        <label for="">อีเมล</label>
                         <input class="form-control" type="email" name="email" placeholder="อีเมล แอดเดรส" />
                     </div>
                     <div class="mb-3">
-                        <label for="">Tel.</label>
+                        <label for="">เบอร์โทร</label>
                         <input class="form-control" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="เบอร์โทร" maxlength="11"/>
                     </div>
                     <input class="btn btn-success rounded" type="submit" name="btn_insert" value="Insert">

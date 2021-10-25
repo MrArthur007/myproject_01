@@ -16,7 +16,6 @@
 
                     $user_id = $row['user_id'];
                     $username = $row['username'];
-                    $passwd = $row['password'];
                     $fname = $row['fullname'];
                     $email = $row['email'];
                     $tel = $row['phone_num'];
@@ -24,7 +23,6 @@
                     $table =    "<tr>" . 
                                 "<td>" . $user_id . "</td>" .
                                 "<td>" . $username . "</td>" .
-                                "<td>" . $passwd . "</td>" .
                                 "<td>" . $fname . "</td>" .
                                 "<td>" . $email . "</td>" .
                                 "<td>" . $tel . "</td>" .

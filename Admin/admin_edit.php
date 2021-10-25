@@ -82,31 +82,31 @@
                 <input class="form-control" style="width: 80px;" type="number" name="U_IDdb" value="<?php echo $id; ?>">
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">Username</label>
+                <label for="" class="form-label">ไอดี</label>
                 <input type="text" name="edit_uname" value="<?php echo $username; ?>" class="form-control">
             </div>
             <div class="">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label">รหัสผ่าน</label>
                 <input type="password" id="myInput" name="u_passwd" value="<?php echo $password; ?>" class="form-control" maxlength="6" id="exampleInputPassword1">
                 <div class="p-2">
-                    <input type="checkbox" onclick="myFunction()"> <span class="fs-6">Show Password</span>
+                    <input type="checkbox" onclick="myFunction()"> <span class="fs-6">ดูรหัสผ่าน</span>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">fullname</label>
+                <label for="" class="form-label">ชื่อ - นามสกุล</label>
                 <input type="text" name="u_fname" value="<?php echo $fullname; ?>" class="form-control">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">อีเมล</label>
                 <input type="email" name="u_email" value="<?php echo $email; ?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-                <label for="">Tel.</label>
+                <label for="">เบอร์โทร</label>
                 <input class="form-control" name="u_tel" value="<?php echo $phone_num; ?>" type="tel" pattern="[0-9]{3}-[0-9]{7}" maxlength="11"/>
             </div>
-            <button type="submit" name="btn_update" class="btn btn-warning">Update</button>
-            <input class="btn btn-secondary" onclick="history.back()" value="Cancel">
+            <button type="submit" name="btn_update" style="width: 100px;" class="btn btn-warning text-light">แก้ไข</button>
+            <input class="btn btn-secondary" style="width: 100px;" onclick="history.back()" value="ยกเลิก">
         </form>
         </div>
     </main>
