@@ -25,6 +25,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+
         html, body {
             height: 100%;
             font-family: 'Kanit', sans-serif;
@@ -33,6 +34,7 @@
             height: 100%;
             overflow-y: hidden; /* don't show content that exceeds my height */
         }
+
         body {
             background-image: url("src/img/index_bg.jpg");
             background-size: cover;
@@ -65,7 +67,7 @@
         <div class="row p-4 text-center">
             <h3 class="mt-3 mb-4"><b>รายละเอียด : </b><?php echo $row['title']; ?></h3>
             <div class="col-5 me-5 p-4 border border-2 rounded-3 mt-3">
-                <img src="Admin/conf/silk_detail_img/<?php echo $row['images']; ?>" id="preview" class="img-fluid rounded-2" width="100%" height="100%" alt="">
+                <img src="Admin/conf/silk_detail_img/<?php echo $row['images']; ?>" id="preview" class="img-fluid rounded-2" style="width:800px; height:500px;" alt="">
                 <?php 
                     $sql_gallery = "SELECT * FROM silk_gallery WHERE silk_id = '$s_id'"; 
                     $select_gallery = $objServer->connected()->prepare($sql_gallery);
