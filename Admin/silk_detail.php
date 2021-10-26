@@ -76,7 +76,7 @@
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr class="text-center">
-                                    <th style="width: 80px;">ลำดับ</th>
+                                    <th style="width: 80px;">ไอดี</th>
                                     <th style="width: 120px;">ประเภทผ้าทอ</th>
                                     <th style="width: 120px;">รูปภาพ</th>
                                     <th style="width: 120px;">ชื่อผ้าทอ</th>
